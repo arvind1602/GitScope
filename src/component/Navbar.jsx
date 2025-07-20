@@ -12,11 +12,12 @@ function Navbar() {
     return <h1>Loading</h1>;
   }
   if (state.isError) {
-    return <h1>Error: {state.errormsg}</h1>;
+    return <h1 className="text-center text-2xl text-red-500">Error: {state.errormsg}</h1>;
   }
+  
   if (!state.data) {
-    return <h1>Search for a user</h1>;
-  }
+    return <h1 className="text-center text-2xl text-red-500">No User Data Available</h1>;
+  } 
   const repourl = state.data.repos_url;
   return (
     <>
